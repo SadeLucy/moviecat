@@ -1,0 +1,33 @@
+<div class="jumbotron">
+    <h2>{{movie.title}}</h2>
+    <a href="{{movie.alt}}">
+    <img ng-src="{{movie.images.medium}}" alt="{{movie.title}}" />
+    </a>
+    <span class="movie-type">影片类型：{{movie.genres.join("、")}}</span>
+    <ul class="detail-role">
+    <li>导演：</li>
+
+        <li ng-repeat="k in movie.directors" class="detail-yanyuan">
+    			<a href="{{k.alt}}">{{k.name}}</a>
+    			<a href="{{k.alt}}"><img ng-src="{{k.avatars.small}}" alt="{{k.name}}"></a>
+    		</li>
+    </ul>
+    <ul class="detail-role">
+    <li>主演：</li>
+
+        <li ng-repeat="i in movie.casts" class="detail-yanyuan">
+    			<a href="{{i.alt}}">{{i.name}}</a>
+    			<a href="{{i.alt}}"><img ng-src="{{i.avatars.small}}" alt="{{i.name}}"></a>
+    		</li>
+    </ul>
+    <div>
+    	<p class="film">影片梗概：</p>
+    	<span class="movie-summary">{{movie.summary}}</span>
+    </div>
+</div>
+<div class="mark" ng-show="loading">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
